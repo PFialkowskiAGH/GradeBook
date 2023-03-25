@@ -1,4 +1,4 @@
-public class Student {
+public class Student implements Comparable{
     String firstName;
     String lastName;
     StudentCondition studentCondition;
@@ -25,5 +25,11 @@ public class Student {
     void print()
     {
         System.out.println(this);
+    }
+
+    @Override
+    public void compare(Student comparedStudent) {
+        if (this.lastName == comparedStudent.lastName) System.out.printf("%s \ni porównywany\n %s \nmają takie samo nazwisko\n".formatted(this.toString(), comparedStudent.toString()));
+        else System.out.printf("%s \ni porównywany\n %s \nnie mają takiego samego nazwiska\n".formatted(this.toString(), comparedStudent.toString()));
     }
 }
