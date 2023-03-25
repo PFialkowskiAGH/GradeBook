@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class ClassOfStudent {
@@ -20,7 +21,7 @@ public class ClassOfStudent {
             boolean isExist = false;
             for (Student element : students)
             {
-                if(element.firstName == student.firstName) isExist = true;
+                if(element.compare(student)) isExist = true;
             }
             if (!isExist) {
                 students.add(student);
@@ -33,5 +34,37 @@ public class ClassOfStudent {
     void addPoints(Student student, double point)
     {
         student.numberOfPoint += point;
+        System.out.println(student);
+        System.out.println("Uzyskał %.2f punktów\n".formatted(point));
+    }
+    void getStudent(Student student)
+    {
+        if (student.numberOfPoint > 1)
+        {
+            student.numberOfPoint -= 1;
+            System.out.println(student);
+            System.out.println("Stracił punkty\n");
+        }
+        else
+        {
+            System.out.println(student);
+            System.out.println("Zostaje usunięty\n");
+            this.students.remove(student);
+        }
+    }
+    void changeCondition(Student student, StudentCondition studentCondition)
+    {
+        student.studentCondition = studentCondition;
+        System.out.println(student);
+        System.out.println("Zmienił status\n");
+    }
+    void removePoints(Student student, double point)
+    {
+        student.numberOfPoint -= point-1;
+        this.getStudent(student);
+    }
+    void search(String lastName)
+    {
+        Collections.sort(students);
     }
 }

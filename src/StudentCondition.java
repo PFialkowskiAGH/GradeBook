@@ -16,5 +16,8 @@ public enum StudentCondition {
         {
             return "Nieobecny";
         }
+    },
+    Obecny {
+        @Override public String toString() { return "Obecny"; }
     }
 }

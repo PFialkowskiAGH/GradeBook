@@ -1,3 +1,3 @@
 public interface Comparable {
-    void compare(Student student);
+    boolean compare(Student student);
 }
