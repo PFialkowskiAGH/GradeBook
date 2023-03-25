@@ -25,6 +25,7 @@ public class ClassOfStudent {
             return "Dodano studenta do klasy";
         }
         else System.err.println("Przekroczono wielkość klasy");
+        //maybe change return object
         return null;
     }
 }
