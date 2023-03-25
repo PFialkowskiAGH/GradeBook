@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class ClassOfStudent {
@@ -5,8 +6,25 @@ public class ClassOfStudent {
     List<Student> students;
     int maxNumberOfStudents;
 
-    void addStudent(Student student)
+    public ClassOfStudent(String className, List<Student> students, int maxNumberOfStudents)
     {
+        this.className = className;
+        this.students = students;
+        this.maxNumberOfStudents = maxNumberOfStudents;
+    }
 
+    String addStudent(Student student)
+    {
+        if (maxNumberOfStudents > students.size())
+        {
+            for (Student element : students)
+            {
+                if(element.firstName == student.firstName) return "W tej klasie jest już student o tym imieniu\n";
+            }
+            students.add(student);
+            return "Dodano studenta do klasy";
+        }
+        else System.err.println("Przekroczono wielkość klasy");
+        return null;
     }
 }
