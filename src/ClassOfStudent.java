@@ -95,5 +95,22 @@ public class ClassOfStudent {
         }
         return searchedStudents;
     }
+    int countByCondition(StudentCondition searchedCondition)
+    {
+        int numberOfStudents = 0;
+        for(Student currentStudent : students)
+        {
+            if (currentStudent.studentCondition == searchedCondition) numberOfStudents++;
+        }
+        return numberOfStudents;
+    }
+
+    void summary()
+    {
+        for(Student currentStudent : students)
+        {
+            currentStudent.print();
+        }
+    };
 
 }

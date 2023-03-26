@@ -23,7 +23,7 @@ public class Main {
         studentsList.add(thirdStudent);
         ClassOfStudent firstClass = new ClassOfStudent("Klasa 1a", studentsList, 4);
         firstClass.addStudent(firstStudent);
-        Student fourthStudent = new Student("Ogier", "Czmiech", StudentCondition.Chory, 2000, 3.0, "Krakowska 15" );
+        Student fourthStudent = new Student("Ogier", "Czmiech", StudentCondition.Obecny, 2000, 3.0, "Krakowska 15" );
         firstClass.addStudent(fourthStudent);
         //firstClass.addStudent(fourthStudent);
 
@@ -48,5 +48,14 @@ public class Main {
         System.out.println("-----------------------Szukanie po fragmencie-----------------------\n");
         List<Student>searchedStudents = firstClass.searchPartial("Og");
         List<Student>searchedStudents2 = firstClass.searchPartial("Cu");
+
+        System.out.println("-----------------------Liczba studentów z danym Condition-----------------------\n");
+        System.out.println("Ilość studentów z: %s w klasie %s to: %d\n".formatted(StudentCondition.Obecny.toString(), firstClass.className, firstClass.countByCondition(StudentCondition.Obecny)));
+
+        System.out.println("-----------------------Summary klasy-----------------------\n");
+        System.out.println("Wszystkie osoby w klasie %s:\n".formatted(firstClass.className));
+        firstClass.summary();
+
+
     }
 }
