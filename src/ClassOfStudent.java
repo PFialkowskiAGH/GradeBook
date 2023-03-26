@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class ClassOfStudent {
@@ -75,4 +76,24 @@ public class ClassOfStudent {
         System.out.println("Nie znaleziono w klasie %s studenta o nazwisku %s".formatted(className,lastName));
         return searchedStudent;
     }
+
+    List<Student> searchPartial(String partOfName)
+    {
+        List<Student> searchedStudents = new ArrayList<>();
+        for(Student currentStudent : students)
+        {
+            if (currentStudent.firstName.contains(partOfName) || currentStudent.lastName.contains(partOfName)) searchedStudents.add(currentStudent);
+        }
+        System.out.println("Wyszukani studenci w klasie %s z %s w imieniu lub nazwisku".formatted(className,partOfName));
+        if (searchedStudents.size() == 0) System.out.println("Brak wyników");
+        else
+        {
+            for(Student currentStudent : searchedStudents)
+            {
+                currentStudent.print();
+            }
+        }
+        return searchedStudents;
+    }
+
 }

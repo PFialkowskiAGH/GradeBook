@@ -36,5 +36,8 @@ public class Main {
         System.out.println("Szukanie studenta");
         Student searchedStudent = firstClass.search("Ogonek");
         Student searchedStudent2 = firstClass.search("Borek");
+        System.out.println("Szukanie po fragmencie");
+        List<Student>searchedStudents = firstClass.searchPartial("Og");
+        List<Student>searchedStudents2 = firstClass.searchPartial("Cu");
     }
 }
