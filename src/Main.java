@@ -56,6 +56,12 @@ public class Main {
         System.out.println("Wszystkie osoby w klasie %s:\n".formatted(firstClass.className));
         firstClass.summary();
 
+        System.out.println("-----------------------Posortowana klasa po nazwisku-----------------------\n");
+        firstClass.sortByLastName();
+        firstClass.summary();
 
+        System.out.println("-----------------------Posortowana klasa po punktach-----------------------\n");
+        firstClass.sortByPoints();
+        firstClass.summary();
     }
 }

@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class ClassOfStudent {
@@ -113,4 +115,26 @@ public class ClassOfStudent {
         }
     };
 
+    void sortByLastName()
+    {
+        Collections.sort(students, new Comparator<Student>() {
+            @Override
+            public int compare(Student o1, Student o2) {
+                return o1.lastName.compareTo(o2.lastName);
+            }
+        });
+    }
+
+    void sortByPoints()
+    {
+        Collections.sort(students, new KomparatorPunkty());
+    }
+
+    private class KomparatorPunkty implements Comparator<Student> {
+        @Override
+        public int compare(Student o1, Student o2) {
+            if (o1.numberOfPoint > o2.numberOfPoint) return 1;
+            else return 0;
+        }
+    }
 }
