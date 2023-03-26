@@ -33,5 +33,8 @@ public class Main {
         firstClass.changeCondition(firstStudent, StudentCondition.Obecny);
         firstClass.removePoints(thirdStudent, 2.5);
         thirdStudent.print();
+        System.out.println("Szukanie studenta");
+        Student searchedStudent = firstClass.search("Ogonek");
+        Student searchedStudent2 = firstClass.search("Borek");
     }
 }

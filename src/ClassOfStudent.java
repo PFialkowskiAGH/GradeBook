@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class ClassOfStudent {
@@ -63,8 +61,18 @@ public class ClassOfStudent {
         student.numberOfPoint -= point-1;
         this.getStudent(student);
     }
-    void search(String lastName)
+    Student search(String lastName)
     {
-        Collections.sort(students);
+        Student searchedStudent = new Student(lastName);
+        for(Student currentStudent : students)
+        {
+            if (searchedStudent.compare(currentStudent))
+            {
+                System.out.println("Znaleniono w klasie %s studenta %s".formatted(className, currentStudent));
+                return currentStudent;
+            }
+        }
+        System.out.println("Nie znaleziono w klasie %s studenta o nazwisku %s".formatted(className,lastName));
+        return searchedStudent;
     }
 }

@@ -16,6 +16,11 @@ public class Student implements Comparable{
         this.studentAdress = studentAdress;
     }
 
+    public Student(String lastname)
+    {
+        this.lastName = lastname;
+    }
+
     @Override
     public String toString()
     {
