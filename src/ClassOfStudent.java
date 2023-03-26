@@ -26,7 +26,7 @@ public class ClassOfStudent {
                 students.add(student);
                 System.out.println("Dodano studenta do klasy\n");
             }
-            else System.out.println("W tej klasie jest już student o tym imieniu\n");
+            else System.out.println("W tej klasie jest już student o tym nazwisku\n");
         }
         else System.err.println("Przekroczono wielkość klasy\n");
     }
@@ -69,11 +69,11 @@ public class ClassOfStudent {
         {
             if (searchedStudent.compare(currentStudent))
             {
-                System.out.println("Znaleniono w klasie %s studenta %s".formatted(className, currentStudent));
+                System.out.println("Znaleniono w klasie %s studenta %s\n".formatted(className, currentStudent));
                 return currentStudent;
             }
         }
-        System.out.println("Nie znaleziono w klasie %s studenta o nazwisku %s".formatted(className,lastName));
+        System.out.println("Nie znaleziono w klasie %s studenta o nazwisku %s\n".formatted(className,lastName));
         return searchedStudent;
     }
 
@@ -84,8 +84,8 @@ public class ClassOfStudent {
         {
             if (currentStudent.firstName.contains(partOfName) || currentStudent.lastName.contains(partOfName)) searchedStudents.add(currentStudent);
         }
-        System.out.println("Wyszukani studenci w klasie %s z %s w imieniu lub nazwisku".formatted(className,partOfName));
-        if (searchedStudents.size() == 0) System.out.println("Brak wyników");
+        System.out.println("Wyszukani studenci w klasie %s z %s w imieniu lub nazwisku:\n".formatted(className,partOfName));
+        if (searchedStudents.size() == 0) System.out.println("Brak wyników\n");
         else
         {
             for(Student currentStudent : searchedStudents)
