@@ -21,7 +21,7 @@ public class Main {
         studentsList.add(firstStudent);
         studentsList.add(secondStudent);
         studentsList.add(thirdStudent);
-        ClassOfStudent firstClass = new ClassOfStudent("Klasa 1a", studentsList, 4);
+        ClassOfStudent firstClass = new ClassOfStudent("1a", studentsList, 4);
         firstClass.addStudent(firstStudent);
         Student fourthStudent = new Student("Ogier", "Czmiech", StudentCondition.Obecny, 2000, 3.0, "Krakowska 15" );
         firstClass.addStudent(fourthStudent);
@@ -67,5 +67,27 @@ public class Main {
 
         System.out.println("-----------------------Max-----------------------\n");
         firstClass.max();
+
+        System.out.println("-----------------------Dodanie klasy do kontenera-----------------------\n");
+        ClassOfStudentContainer firstContainer = new ClassOfStudentContainer();
+        firstContainer.isEmpty();
+        firstContainer.addClass(firstClass.className, firstClass);
+        firstContainer.isEmpty();
+        firstContainer.addClass(firstClass.className, firstClass);
+
+        System.out.println("-----------------------Usunięcie klasy do kontenera-----------------------\n");
+        firstContainer.removeClass("1a");
+        firstContainer.isEmpty();
+        firstContainer.removeClass("1a");
+
+        System.out.println("-----------------------Szuka pustych klas-----------------------\n");
+        firstContainer.addClass(firstClass.className, firstClass);
+        List studentsList2 = new ArrayList<Student>();
+        ClassOfStudent secondClass = new ClassOfStudent("1b", studentsList2, 10);
+        firstContainer.addClass(secondClass.className, secondClass);
+        List emptyGroups = firstContainer.findEmptyGroups();
+
+        System.out.println("-----------------------Podsumowanie kontenera-----------------------\n");
+        firstContainer.summary();
     }
 }

@@ -7,14 +7,12 @@ public class ClassOfStudent {
     String className;
     List<Student> students;
     int maxNumberOfStudents;
-
     public ClassOfStudent(String className, List<Student> students, int maxNumberOfStudents)
     {
         this.className = className;
         this.students = students;
         this.maxNumberOfStudents = maxNumberOfStudents;
     }
-
     void addStudent(Student student)
     {
         if (maxNumberOfStudents > students.size())
@@ -78,7 +76,6 @@ public class ClassOfStudent {
         System.out.println("Nie znaleziono w klasie %s studenta o nazwisku %s\n".formatted(className,lastName));
         return searchedStudent;
     }
-
     List<Student> searchPartial(String partOfName)
     {
         List<Student> searchedStudents = new ArrayList<>();
@@ -106,7 +103,6 @@ public class ClassOfStudent {
         }
         return numberOfStudents;
     }
-
     void summary()
     {
         for(Student currentStudent : students)
@@ -114,7 +110,6 @@ public class ClassOfStudent {
             currentStudent.print();
         }
     };
-
     void sortByLastName()
     {
         Collections.sort(students, new Comparator<Student>() {
@@ -133,7 +128,6 @@ public class ClassOfStudent {
     {
         System.out.println(Collections.max(students, new KomparatorPunkty()));
     }
-
     private class KomparatorPunkty implements Comparator<Student> {
         @Override
         public int compare(Student o1, Student o2) {
