@@ -89,5 +89,10 @@ public class Main {
 
         System.out.println("-----------------------Podsumowanie kontenera-----------------------\n");
         firstContainer.summary();
+
+        System.out.println("-----------------------Szukanie studnenta w kontenerze-----------------------\n");
+        firstContainer.searchStudent("Czmiech");
+        secondClass.addStudent(fourthStudent);
+        List searchedStudent3 = firstContainer.searchStudent("Czmiech");
     }
 }

@@ -50,4 +50,14 @@ public class ClassOfStudentContainer {
         if (mapOfClasses.isEmpty()) System.out.println("Ten konetner jest pusty");
         else System.out.println("Ten kontener nie jest pusty");
     }
+
+    ArrayList searchStudent(String lastname)
+    {
+        ArrayList searchedStudent = new ArrayList<>();
+        mapOfClasses.forEach((key, value) ->
+        {
+            searchedStudent.add(value.search(lastname));
+        });
+        return searchedStudent;
+    }
 }
