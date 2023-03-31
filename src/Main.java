@@ -64,5 +64,8 @@ public class Main {
         //thirdStudent.numberOfPoint = 6.00;
         firstClass.sortByPoints();
         firstClass.summary();
+
+        System.out.println("-----------------------Max-----------------------\n");
+        firstClass.max();
     }
 }

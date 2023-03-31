@@ -124,10 +124,14 @@ public class ClassOfStudent {
             }
         });
     }
-
     void sortByPoints()
     {
         Collections.sort(students, new KomparatorPunkty());
+        Collections.reverse(students);
+    }
+    void max()
+    {
+        System.out.println(Collections.max(students, new KomparatorPunkty()));
     }
 
     private class KomparatorPunkty implements Comparator<Student> {
