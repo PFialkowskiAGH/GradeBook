@@ -75,7 +75,7 @@ public class Main {
         firstContainer.isEmpty();
         firstContainer.addClass(firstClass.className, firstClass);
 
-        System.out.println("-----------------------Usunięcie klasy do kontenera-----------------------\n");
+        System.out.println("-----------------------Usunięcie klasy z kontenera-----------------------\n");
         firstContainer.removeClass("1a");
         firstContainer.isEmpty();
         firstContainer.removeClass("1a");
