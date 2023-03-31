@@ -61,6 +61,7 @@ public class Main {
         firstClass.summary();
 
         System.out.println("-----------------------Posortowana klasa po punktach-----------------------\n");
+        //thirdStudent.numberOfPoint = 6.00;
         firstClass.sortByPoints();
         firstClass.summary();
     }
